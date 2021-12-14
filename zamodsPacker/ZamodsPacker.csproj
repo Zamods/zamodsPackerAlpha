@@ -12,10 +12,24 @@
     <Product>zamodsPacker</Product>
     <ApplicationIcon>bitmap.ico</ApplicationIcon>
     <PackageIcon>bitmap.png</PackageIcon>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <Copyright>Copyright (c) 2021 Mohammad Awais</Copyright>
+    <Configurations>Debug;Release;Release x86</Configurations>
+    <Platforms>AnyCPU;x86</Platforms>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/Zamods/zamodsPackerAlpha</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\..\..\..\Desktop\Desktop\bitmap.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\..\..\Desktop\Desktop\license.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
