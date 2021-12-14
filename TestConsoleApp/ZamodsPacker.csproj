@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Version>0.0.1</Version>
+    <Company>zamods</Company>
+    <Authors>zamods</Authors>
+    <Description>Console utility to generate DAZ manifest file.</Description>
+    <PackageReleaseNotes>Alpha release.</PackageReleaseNotes>
+    <PackageId>zamodsPacker</PackageId>
+    <Product>zamodsPacker</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="7zip\**" />
+    <EmbeddedResource Remove="7zip\**" />
+    <None Remove="7zip\**" />
+  </ItemGroup>
+
+</Project>
