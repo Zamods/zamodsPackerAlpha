@@ -10,12 +10,15 @@
     <PackageReleaseNotes>Alpha release.</PackageReleaseNotes>
     <PackageId>zamodsPacker</PackageId>
     <Product>zamodsPacker</Product>
+    <ApplicationIcon>bitmap.ico</ApplicationIcon>
+    <PackageIcon>bitmap.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="7zip\**" />
-    <EmbeddedResource Remove="7zip\**" />
-    <None Remove="7zip\**" />
+    <None Include="..\..\..\..\Desktop\Desktop\bitmap.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
