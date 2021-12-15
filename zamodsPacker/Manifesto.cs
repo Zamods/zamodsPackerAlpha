@@ -37,7 +37,7 @@ namespace ZamodsPacker
                 finalText += $"\n{MANIFESTFOOTER}";
                 string finalFilePath = $"{path}\\Manifest.dsx";
 
-                await File.WriteAllTextAsync(finalFilePath, finalText);
+                await File.WriteAllTextAsync(finalFilePath, finalText, encoding: System.Text.Encoding.UTF8);
                 Console.WriteLine($"Wrote manifest file successfully to path: {finalFilePath}");
             }
             catch (Exception ex)

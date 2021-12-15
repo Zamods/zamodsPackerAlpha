@@ -11,6 +11,18 @@ namespace ZamodsPacker
             int result = 1;
 
             PackerHeading();
+            Console.WriteLine("Do you want to generate package name?");
+            Console.WriteLine("Type \"1\" for yes or \"0\" for no!");
+            result = CheckUserResponse();
+            
+            if(result == 1)
+            {
+                var packageNamer = new PackageNamer();
+                packageNamer.GeneratePackageName();
+            }
+            Console.Clear();
+
+            PackerHeading();
             Console.WriteLine("Do you want to create manifest & supplement files for more than one product?");
             Console.WriteLine("Type \"1\" for yes or \"0\" for no!");
             result = CheckUserResponse();
@@ -57,11 +69,13 @@ namespace ZamodsPacker
 
             PackerHeading();
             Console.WriteLine("Pass GLOBALID! \nTip: Check it in metadata of your product!");
+            Console.WriteLine("Content\\Runtime\\Support\\yourproduct.dsx");
             string globalID = Console.ReadLine();
             Console.Clear();
 
             PackerHeading();
             Console.WriteLine("Pass Product Name to generate \"Supplement.dsx\"! \nTip: Check it in metadata of your product!");
+            Console.WriteLine("Content\\Runtime\\Support\\yourproduct.dsx");
             string productName = Console.ReadLine();
             Console.Clear();
 
@@ -133,7 +147,7 @@ namespace ZamodsPacker
 
         private static void PackerHeading()
         {
-            Console.WriteLine("zamodsPacker Alpha v.0.0.1\n");
+            Console.WriteLine("zamodsPacker Alpha v.0.0.2\n");
             Console.WriteLine("Manifest and Supplement generator for Dad Studio aKA Daz Studio.\n");
             Console.WriteLine("Links: https://shorturl.at/jquBG");
             Console.WriteLine("Github: https://github.com/Zamods/zamodsPackerAlpha");

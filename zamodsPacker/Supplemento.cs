@@ -11,7 +11,6 @@ namespace ZamodsPacker
     {
         const string SUPPLEMENTHEADER = "<ProductSupplement VERSION=\"0.1\">";
         const string SUPPLEMENTFOOTER = "</ProductSupplement>";
-        const string INSTALLTYPE = "<InstallTypes VALUE=\"Content\">";
         const string PRODUCTTAGS = "<ProductTags VALUE=\"DAZStudio4_5\">";
 
         /// <summary>
@@ -26,14 +25,13 @@ namespace ZamodsPacker
             {
                 string PRODUCTNAME = $"<ProductName VALUE=\"{productName}\"/>";
                 string finalText = SUPPLEMENTHEADER;
+
                 finalText += $"\n {PRODUCTNAME}";
-                finalText += $"\n {INSTALLTYPE}";
                 finalText += $"\n {PRODUCTTAGS}";
                 finalText += $"\n{SUPPLEMENTFOOTER}";
 
                 string finalFilePath = $"{path}\\Supplement.dsx";
-
-                await File.WriteAllTextAsync(finalFilePath, finalText);
+                await File.WriteAllTextAsync(finalFilePath, finalText, encoding: System.Text.Encoding.UTF8);
                 Console.WriteLine($"Wrote supplement file successfully to path: {finalFilePath}");
             }
             catch (Exception ex)
