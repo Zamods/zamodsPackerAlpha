@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace ZamodsPacker
 {
@@ -11,7 +12,7 @@ namespace ZamodsPacker
     {
         const string SUPPLEMENTHEADER = "<ProductSupplement VERSION=\"0.1\">";
         const string SUPPLEMENTFOOTER = "</ProductSupplement>";
-        const string PRODUCTTAGS = "<ProductTags VALUE=\"DAZStudio4_5\">";
+        const string PRODUCTTAGS = "<ProductTags VALUE=\"DAZStudio4_5\"/>";
 
         /// <summary>
         /// Writes the product supplement file for given product.
@@ -31,7 +32,9 @@ namespace ZamodsPacker
                 finalText += $"\n{SUPPLEMENTFOOTER}";
 
                 string finalFilePath = $"{path}\\Supplement.dsx";
-                await File.WriteAllTextAsync(finalFilePath, finalText, encoding: System.Text.Encoding.UTF8);
+
+                Encoding utf8 = Encoding.GetEncoding("ISO-8859-1");
+                await File.WriteAllTextAsync(finalFilePath, finalText, encoding: utf8);
                 Console.WriteLine($"Wrote supplement file successfully to path: {finalFilePath}");
             }
             catch (Exception ex)

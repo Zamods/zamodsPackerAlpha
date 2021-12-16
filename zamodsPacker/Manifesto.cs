@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 
 
@@ -37,7 +38,8 @@ namespace ZamodsPacker
                 finalText += $"\n{MANIFESTFOOTER}";
                 string finalFilePath = $"{path}\\Manifest.dsx";
 
-                await File.WriteAllTextAsync(finalFilePath, finalText, encoding: System.Text.Encoding.UTF8);
+                Encoding utf8 = Encoding.GetEncoding("ISO-8859-1");
+                await File.WriteAllTextAsync(finalFilePath, finalText, encoding: utf8);
                 Console.WriteLine($"Wrote manifest file successfully to path: {finalFilePath}");
             }
             catch (Exception ex)
