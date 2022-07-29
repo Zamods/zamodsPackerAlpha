@@ -20,7 +20,7 @@ namespace ZamodsPacker
         {
             Target = target;
             Action = action;
-            Value = value;
+            Value = XMLSpecialCharacterConverter.UnicodeToXMLHandler(value);
         }
 
         public override string ToString()

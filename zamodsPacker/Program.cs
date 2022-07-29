@@ -147,7 +147,7 @@ namespace ZamodsPacker
 
         private static void PackerHeading()
         {
-            Console.WriteLine("zamodsPacker Alpha v.0.0.2\n");
+            Console.WriteLine("zamodsPacker Alpha v.0.0.3\n");
             Console.WriteLine("Manifest and Supplement generator for Dad Studio aKA Daz Studio.\n");
             Console.WriteLine("Links: https://shorturl.at/jquBG");
             Console.WriteLine("Github: https://github.com/Zamods/zamodsPackerAlpha");
